@@ -18,7 +18,7 @@ namespace GettingStarted
             }
         }
 
-        // Event guard (property)
+        // Action guard (property)
         public bool CanIncrementCount
         {
             get
@@ -28,9 +28,9 @@ namespace GettingStarted
         }
 
         // Handling event
-        public void IncrementCount()
+        public void IncrementCount(int delta)
         {
-            Count++;
+            Count += delta;
         }
 
     }
