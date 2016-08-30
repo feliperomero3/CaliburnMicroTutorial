@@ -14,12 +14,12 @@
         <StackPanel Orientation="Horizontal" 
                     VerticalAlignment="Top"
                     HorizontalAlignment="Center">
-            
+
             <RepeatButton Name="IncrementCount"
-                      Content="+1"
-                      Margin="15"
+                          Content="+1"
+                          Margin="15"
                           Width="100"
-                      VerticalAlignment="Top">
+                          VerticalAlignment="Top">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <cal:ActionMessage MethodName="IncrementCount">
@@ -41,7 +41,7 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </RepeatButton>
-            
+
         </StackPanel>
 
         <TextBlock Name="Count" 
@@ -49,5 +49,28 @@
                    FontSize="150" 
                    VerticalAlignment="Center" 
                    HorizontalAlignment="Center" />
+
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center">
+            <Slider Name="Delta" 
+                    Minimum="0"
+                    Maximum="5"
+                    Width="100"
+                    Margin="15" />
+            <Button Name="IncrementByDelta"
+                    Content="Increment"
+                    Width="100"
+                    Margin="15">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <cal:ActionMessage MethodName="IncrementCount">
+                            <cal:Parameter Value="{Binding ElementName=Delta, Path=Value}"/>
+                        </cal:ActionMessage>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+        </StackPanel>
+
     </Grid>
 </UserControl>
