@@ -1,14 +1,20 @@
 ﻿using Caliburn.Micro;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GettingStarted
 {
     class AppViewModel : PropertyChangedBase
     {
+        private int _count = 50;
 
+        public int Count
+        {
+            get { return _count; }
+            set
+            {
+                _count = value;
+                NotifyOfPropertyChange(() => Count);
+                //NotifyOfPropertyChange(nameof(Count));
+            }
+        }
     }
 }

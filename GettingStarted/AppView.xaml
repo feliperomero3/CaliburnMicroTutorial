@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:GettingStarted"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+
     <Grid Width="300" Height="300" Background="LightBlue">
-            
+        <TextBlock Name="Count" 
+                   Margin="20" 
+                   FontSize="150" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" />
     </Grid>
 </UserControl>
