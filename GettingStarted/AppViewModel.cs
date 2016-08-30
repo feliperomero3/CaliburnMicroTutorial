@@ -6,7 +6,7 @@ namespace GettingStarted
     {
         private int _count = 50;
 
-        // Data binding
+        // Data binding (property)
         public int Count
         {
             get { return _count; }
@@ -14,7 +14,16 @@ namespace GettingStarted
             {
                 _count = value;
                 NotifyOfPropertyChange(() => Count);
-                //NotifyOfPropertyChange(nameof(Count));
+                NotifyOfPropertyChange(() => CanIncrementCount);
+            }
+        }
+
+        // Event guard (property)
+        public bool CanIncrementCount
+        {
+            get
+            {
+                return Count < 100;
             }
         }
 
@@ -23,5 +32,6 @@ namespace GettingStarted
         {
             Count++;
         }
+
     }
 }
