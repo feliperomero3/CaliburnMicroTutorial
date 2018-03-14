@@ -5,26 +5,30 @@ Showcasing how to associate two or more controls to the same method.
 
 Example: method `IncrementCount` on your ViewModel:
 
-    // Handling event
-    public void IncrementCount()
-    {
-        Count++;
-    }
+```csharp
+// Handling event
+public void IncrementCount()
+{
+    Count++;
+}
+```
 
-And your View has:
+And your View has
 
-    <Button Name="ButtonOne">
-    	<i:Interaction.Triggers>
-    		<i:EventTrigger EventName="Click">
-    			<cal:ActionMessage MethodName="IncrementCount" />
-    		</i:EventTrigger>
-    	</i:Interaction.Triggers>
-    </Button>
-    
-    <Button Name="ButtonTwo">
-    	<i:Interaction.Triggers>
-    		<i:EventTrigger EventName="Click">
-    			<cal:ActionMessage MethodName="IncrementCount" />
-    		</i:EventTrigger>
-    	</i:Interaction.Triggers>
-    </Button>
+```xaml
+<Button Name="ButtonOne">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Click">
+            <cal:ActionMessage MethodName="IncrementCount" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+</Button>
+
+<Button Name="ButtonTwo">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Click">
+            <cal:ActionMessage MethodName="IncrementCount" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+</Button>
+```
